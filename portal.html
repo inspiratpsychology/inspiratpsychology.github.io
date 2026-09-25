@@ -197,6 +197,15 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
 .doc-btn{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;text-decoration:none;color:var(--ink);font-weight:600;box-shadow:var(--shadow);transition:transform .2s,border-color .2s}
 .doc-btn:hover{border-color:var(--violet);transform:translateY(-2px)}
 .doc-btn svg{width:20px;height:20px;stroke:var(--violet);flex:0 0 20px}
+
+.acc-head{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px}
+.acc-head::-webkit-details-marker{display:none}
+.acc-title{flex:1;min-width:0}
+.acc-title .kicker{display:block;margin-bottom:6px}
+.acc-title h3{margin:0}
+.acc-chev{flex:0 0 42px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .25s,background .25s;background:#fff}
+.acc-chev svg{width:18px;height:18px;stroke:var(--plum)}
+.acc[open] .acc-chev{transform:rotate(180deg);background:#F4EFFB}
 </style>
 </head>
 <body>
@@ -233,9 +242,9 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
       <p>Cada botón te lleva al material en Google Drive. Entra con el correo electrónico que registraste al matricularte. Si ves el aviso de "Solicitar acceso", presiónalo y te aprobaremos a la brevedad.</p>
     </div>
   </div>
-    <div class="detail reveal" style="margin-bottom:26px">
-      <span class="kicker">Repaso de reválida</span>
-      <h3>Material del repaso de reválida</h3>
+    <details class="detail acc reveal" style="margin-bottom:26px">
+      <summary class="acc-head"><span class="acc-title"><span class="kicker">Repaso de reválida</span>
+      <h3>Material del repaso de reválida</h3></span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
       <!-- PENDIENTE: reemplazar cada href="#" por el enlace de Google Drive correspondiente -->
       <div class="doc-grid">
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Capítulo 1</a>
@@ -245,36 +254,36 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Examen de práctica 1</a>
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Examen de práctica 2</a>
       </div>
-    </div>
-    <div class="detail reveal" style="margin-bottom:26px">
-      <span class="kicker">Exámenes comprensivos</span>
-      <h3>Material de comprensivos</h3>
+    </details>
+    <details class="detail acc reveal" style="margin-bottom:26px">
+      <summary class="acc-head"><span class="acc-title"><span class="kicker">Exámenes comprensivos</span>
+      <h3>Material de comprensivos</h3></span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
       <!-- PENDIENTE: reemplazar cada href="#" por el enlace de Google Drive correspondiente -->
       <div class="doc-grid">
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Guía de repaso 1</a>
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Guía de repaso 2</a>
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Examen de práctica 1</a>
       </div>
-    </div>
-    <div class="detail reveal" style="margin-bottom:26px">
-      <span class="kicker">Materiales</span>
-      <h3>Manual y exámenes</h3>
+    </details>
+    <details class="detail acc reveal" style="margin-bottom:26px">
+      <summary class="acc-head"><span class="acc-title"><span class="kicker">Materiales</span>
+      <h3>Manual y exámenes</h3></span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
       <!-- PENDIENTE: reemplazar cada href="#" por el enlace de Google Drive correspondiente -->
       <div class="doc-grid">
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Manual completo (PDF)</a>
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Examen simulado 1</a>
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Examen simulado 2</a>
       </div>
-    </div>
-    <div class="detail reveal" style="margin-bottom:26px">
-      <span class="kicker">Acompañamiento</span>
-      <h3>Tutorías y talleres</h3>
+    </details>
+    <details class="detail acc reveal" style="margin-bottom:26px">
+      <summary class="acc-head"><span class="acc-title"><span class="kicker">Acompañamiento</span>
+      <h3>Tutorías y talleres</h3></span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
       <!-- PENDIENTE: reemplazar cada href="#" por el enlace de Google Drive correspondiente -->
       <div class="doc-grid">
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Material del taller</a>
         <a class="doc-btn" href="#"><span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>Guías de apoyo</a>
       </div>
-    </div>
+    </details>
 </div></main>
 
 <footer>
