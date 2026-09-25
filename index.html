@@ -154,6 +154,16 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
 .credit{display:flex;align-items:center;gap:10px}
 .credit-logo{display:inline-flex;align-items:center}
 .credit-logo img{height:26px;width:auto;display:block}
+
+/* portal estudiantes */
+.portal-card{background:linear-gradient(135deg,var(--plum),var(--plum2));border-radius:26px;padding:clamp(28px,4vw,44px);display:flex;gap:26px;align-items:center;flex-wrap:wrap;color:#fff;box-shadow:var(--shadow)}
+.portal-ico{width:58px;height:58px;flex:0 0 58px;border-radius:18px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center}
+.portal-ico svg{width:26px;height:26px;stroke:#E9B44C}
+.portal-txt{flex:1 1 260px}
+.portal-txt h3{color:#fff;font-size:clamp(1.35rem,2.4vw,1.7rem);margin:6px 0 8px}
+.portal-txt .kicker{color:#E9B44C}
+.portal-txt p{color:#D9D2E8;margin:0;max-width:56ch}
+.portal-card .btn{margin-left:auto}
 /* deco */
 .bfly{position:absolute;opacity:.5;pointer-events:none}
 /* reveal */
@@ -191,7 +201,7 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
         <a href="tutorias.html">Tutorías</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#faq">FAQ</a>
-        <a href="#contacto" class="nav-cta">Contacto</a>
+        <a href="#portal">Portal</a><a href="#contacto" class="nav-cta">Contacto</a>
       </div>
       <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     </div>
@@ -416,6 +426,23 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
   </div>
 </section>
 
+
+<!-- ============ PORTAL DE ESTUDIANTES ============ -->
+<section id="portal" style="padding-top:20px">
+  <div class="wrap">
+    <div class="portal-card reveal">
+      <div class="portal-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <div class="portal-txt">
+        <span class="kicker">Estudiantes</span>
+        <h3>Portal de estudiantes</h3>
+        <p>Si ya estás matriculada en uno de nuestros repasos, entra aquí con el correo electrónico que registraste para acceder al material.</p>
+      </div>
+      <!-- PENDIENTE: sustituir href="#" por el enlace a la carpeta de Google Drive -->
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Entrar al portal</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACTO ============ -->
 <section id="contacto">
   <div class="wrap">
@@ -480,6 +507,7 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
         <a href="tutorias.html">Tutorías y talleres</a>
         <a href="#nosotros">Sobre nosotros</a>
         <a href="#contacto">Contacto</a>
+        <a href="#portal">Portal de estudiantes</a>
       </div>
     </div>
     <div class="foot-base">
