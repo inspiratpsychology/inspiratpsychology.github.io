@@ -207,6 +207,13 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
 .acc-chev svg{width:18px;height:18px;stroke:var(--plum)}
 .acc[open] .acc-chev{transform:rotate(180deg);background:#F4EFFB}
 </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#7B5BC4">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Inspirat">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
@@ -320,6 +327,9 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => na
 <script>
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});}
 </script>
 </body>
 </html>

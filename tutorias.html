@@ -191,6 +191,13 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
 .cta-band p{color:#CFC6DE;margin-bottom:22px}
 .page-top{padding:130px 0 10px}
 </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#7B5BC4">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Inspirat">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <nav>
@@ -286,6 +293,9 @@ burger.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});}
 </script>
 </body>
 </html>
