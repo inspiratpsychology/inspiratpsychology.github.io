@@ -89,6 +89,21 @@ h2.sec-title{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:700;max-width:22em
 .info b{display:flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);margin-bottom:6px}
 .info b svg{width:16px;height:16px;stroke:var(--violet)}
 .info p{font-size:.95rem}
+/* planes de estudio */
+.plans{margin:36px 0 10px}
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:26px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 28px;box-shadow:var(--shadow);position:relative;display:flex;flex-direction:column}
+.plan.feat{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box}
+.plan .flag{position:absolute;top:-15px;left:28px;background:var(--grad);background-size:220% 220%;animation:gmove 7s ease infinite;color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;box-shadow:0 8px 18px rgba(217,79,140,.35)}
+.plan h4{font-size:1.4rem;margin-bottom:2px}
+.plan .ptag{color:var(--magenta);font-weight:700;font-size:.93rem;margin-bottom:16px}
+.plan p.desc{font-size:.93rem;color:var(--muted);margin-bottom:.9em}
+.plan .inc{font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin:18px 0 10px}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.plan ul li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem}
+.plan ul svg{width:18px;height:18px;flex:none;stroke:var(--lime);margin-top:2px}
+.plan .motto{margin-top:auto;padding-top:20px;font-style:italic;color:var(--magenta);font-weight:600;font-size:.95rem}
+.plan .btn{margin-top:16px;align-self:flex-start}
 .pend{display:inline-block;font-size:.78rem;font-weight:700;color:#8a6d1f;background:#FBF3DC;border:1px solid #EDDFAE;padding:3px 12px;border-radius:999px;margin-top:6px}
 /* prose */
 .prose{max-width:46rem}
@@ -228,14 +243,65 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
       <span class="kicker">Repaso de reválida</span>
       <h3>Prepárate para la reválida con acompañamiento real</h3>
       <p class="lead">Un repaso pensado para ayudarte a organizar el material, identificar las áreas que necesitas reforzar y llegar con mayor claridad y confianza al examen de Reválida de Psicología de Puerto Rico.</p>
-      <!-- EJEMPLO: datos de muestra para visualización, reemplazar con información oficial -->
-      <div class="info-grid">
-        <div class="info"><b><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg>Modalidad</b><p>En línea en vivo por Zoom, con sesiones grabadas disponibles.</p></div>
-        <div class="info"><b><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/></svg>Temas</b><p>Ética profesional, psicometría, teorías de la personalidad, psicopatología, consejería y psicoterapia, métodos de investigación, desarrollo humano y psicología social.</p></div>
-        <div class="info"><b><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Duración</b><p>8 semanas · 2 sesiones semanales de 2 horas.</p></div>
-        <div class="info"><b><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 8v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8M1 3h22v5H1zM10 12h4"/></svg>Materiales incluidos</b><p>Manual digital, banco de más de 500 preguntas, 4 exámenes de práctica y guías de repaso por tema.</p></div>
-        <div class="info"><b><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Próximas fechas</b><p>Matrícula: 15 al 28 de octubre de 2026 · Inicio: 4 de noviembre de 2026. <a href="index.html#fechas" style="font-weight:700;color:var(--magenta)">Ver calendario</a></p></div>
-        <div class="info"><b><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4M4 6v12c0 1.1.9 2 2 2h14v-4M18 12a2 2 0 0 0 0 4h2v-4z"/></svg>Costo e inscripción</b><p>$350 · plan de pagos en 2 plazos. Escríbenos para inscribirte.</p></div>
+      <div class="plans">
+        <span class="kicker">Planes de estudio</span>
+        <h3>Elige tu plan</h3>
+        <p class="lead">Tres formas de prepararte para la reválida, según tu ritmo y el acompañamiento que necesites.</p>
+        <div class="plan-grid">
+          <article class="plan feat reveal">
+            <span class="flag">El más completo</span>
+            <h4>Inspirat Premium</h4>
+            <p class="ptag">Repaso grupal con acompañamiento integral</p>
+            <p class="desc">Prepararte para la reválida de psicología implica mucho más que leer y memorizar información. También requiere organizar lo que has aprendido, identificar los temas que necesitas reforzar y practicar cómo aplicar tus conocimientos al responder preguntas de examen. <strong>Inspirat Premium</strong> reúne esos elementos en una experiencia de estudio estructurada, participativa y acompañada.</p>
+            <p class="desc">A través de más de diez reuniones virtuales, podrás repasar contenidos de distintas áreas de la psicología junto a profesionales cualificados, hacer preguntas en vivo e intercambiar ideas con otras personas que comparten tu misma meta. El manual de estudio a color te servirá como guía durante el repaso, mientras que los exámenes por materia, las claves de estudio y el material de refuerzo te ayudarán a practicar y reconocer tu progreso.</p>
+            <p class="desc">El programa también incluye una simulación de reválida para que te familiarices con el formato del examen y pongas a prueba tu preparación. Además, contarás con <strong>tres sesiones individuales de consejería académica</strong>, en las que podrás conversar sobre tus necesidades de estudio, aclarar dudas y recibir orientación para aprovechar mejor tu tiempo de preparación.</p>
+            <p class="desc">En Creciendo con Inspirat queremos que tengas recursos confiables, oportunidades para practicar y un espacio donde puedas sentirte acompañado mientras avanzas hacia este paso importante de tu carrera.</p>
+            <p class="inc">Inspirat Premium incluye</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Más de 10 reuniones virtuales</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Manual de estudio a color</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Simulación de reválida</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Exámenes por materia</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Consejos y claves de estudio por materia</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Grupo de estudio</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Tres sesiones individuales de consejería académica</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Acompañamiento grupal e individual durante el proceso</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Material de refuerzo</li>
+            </ul>
+            <p class="motto">Inspírate, crece y transfórmate.</p>
+            <a class="btn btn-primary" href="index.html#contacto">Quiero este plan</a>
+          </article>
+          <article class="plan reveal">
+            <h4>Inspirat PLUS</h4>
+            <p class="ptag">Estudio semiindependiente</p>
+            <p class="desc"><strong>Prepárate a tu ritmo, con el apoyo que necesitas.</strong> Inspirat PLUS está diseñado para quienes prefieren organizar su propio horario de estudio sin sentirse solos durante la preparación para la reválida de psicología.</p>
+            <p class="desc">Tendrás acceso a un manual impreso a color, exámenes por materia y material de refuerzo para repasar los temas, identificar tus áreas de oportunidad y practicar lo aprendido. Además, podrás realizar una simulación de reválida para familiarizarte con la experiencia del examen. El acompañamiento individual te permitirá aclarar dudas y recibir orientación a lo largo del proceso.</p>
+            <p class="inc">Inspirat PLUS incluye</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Manual de estudio impreso a color</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Simulación de reválida</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Exámenes por materia</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Material de refuerzo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Acompañamiento individual</li>
+            </ul>
+            <p class="motto">Tu preparación, a tu ritmo y con Inspirat a tu lado.</p>
+            <a class="btn btn-primary" href="index.html#contacto">Quiero este plan</a>
+          </article>
+          <article class="plan reveal">
+            <h4>Inspirat BASIC</h4>
+            <p class="ptag">Estudio independiente</p>
+            <p class="desc"><strong>Organiza tu preparación a tu manera.</strong> Inspirat BASIC es para quienes desean estudiar de forma independiente y establecer su propio ritmo de preparación para la reválida de psicología.</p>
+            <p class="desc">Recibirás un manual de estudio impreso a color y material de refuerzo para repasar los temas. También podrás realizar una simulación de reválida para practicar y reconocer las áreas en las que deseas concentrar tu estudio.</p>
+            <p class="inc">Inspirat BASIC incluye</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Manual de estudio impreso a color</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Simulación de reválida</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Material de refuerzo</li>
+            </ul>
+            <p class="motto">Tu preparación, a tu ritmo.</p>
+            <a class="btn btn-primary" href="index.html#contacto">Quiero este plan</a>
+          </article>
+        </div>
       </div>
       <a class="btn btn-primary" href="index.html#contacto">Quiero inscribirme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
