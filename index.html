@@ -120,6 +120,13 @@ h2.sec-title{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:700;max-width:22em
 .faq summary .plus{flex:none;width:30px;height:30px;border-radius:50%;background:var(--grad);background-size:220% 220%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:transform .25s}
 .faq[open] summary .plus{transform:rotate(45deg)}
 .faq .a{padding:0 24px 22px;color:var(--muted);font-size:.96rem}
+/* programas colapsables */
+details.prog{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+details.prog>summary{list-style:none;cursor:pointer;padding:22px 28px;font-weight:800;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+details.prog>summary::-webkit-details-marker{display:none}
+details.prog>summary .plus{flex:none;width:32px;height:32px;border-radius:50%;background:var(--grad);background-size:220% 220%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.15rem;transition:transform .25s}
+details.prog[open]>summary .plus{transform:rotate(45deg)}
+details.prog .cards{padding:8px 28px 32px}
 /* contacto */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
 .c-rows{display:flex;flex-direction:column;gap:14px}
@@ -268,9 +275,11 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
     <div class="sec-head reveal">
       <span class="kicker">Nuestros ofrecimientos</span>
       <h2 class="sec-title">Elige cómo prepararte</h2>
-      <p class="sec-sub">Cinco caminos, un mismo acompañamiento: avanza a tu ritmo, estamos aquí para acompañarte.</p>
+      <p class="sec-sub">Varios caminos, un mismo acompañamiento: avanza a tu ritmo, estamos aquí para acompañarte.</p>
     </div>
-    <div class="cards">
+    <details class="prog reveal">
+      <summary><span>Explorar programas y planes</span><span class="plus">+</span></summary>
+      <div class="cards">
       <a class="card reveal" href="revalida.html">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></div>
         <h3>Repaso de reválida</h3>
@@ -301,7 +310,14 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
         <p>Acompañamiento individual o grupal, a tu ritmo.</p>
         <span class="go">Ver detalles →</span>
       </a>
+      <a class="card reveal" href="revalida.html#planes">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.4"/></svg></div>
+        <h3>Planes de estudio</h3>
+        <p>Compara los planes Premium, PLUS y BASIC del repaso de reválida.</p>
+        <span class="go">Ver planes →</span>
+      </a>
     </div>
+    </details>
   </div>
 </section>
 <!-- ============ COMPARAR PROGRAMAS ============ -->
