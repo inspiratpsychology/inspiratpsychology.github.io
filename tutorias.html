@@ -313,5 +313,24 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script>
+// El chat de Tawk.to queda fijo muy pegado al borde inferior; subirlo un poco.
+(function(){
+  var SUBIR = 'translateY(-32px)';
+  function ajustar(){
+    document.querySelectorAll('iframe[title="Chat widget"]').forEach(function(f){
+      f.style.setProperty('transform', SUBIR, 'important');
+    });
+  }
+  var T = window.Tawk_API = window.Tawk_API || {};
+  function envolver(ev){
+    var p = T[ev];
+    T[ev] = function(){ if(p) p(); setTimeout(ajustar, 60); };
+  }
+  envolver('onLoad'); envolver('onChatMaximized'); envolver('onChatMinimized'); envolver('onChatHidden');
+  if(document.body){ new MutationObserver(ajustar).observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:['style']}); }
+  ajustar();
+})();
+</script>
 </body>
 </html>
