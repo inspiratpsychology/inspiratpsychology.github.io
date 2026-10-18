@@ -113,7 +113,19 @@ h2.sec-title{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:700;max-width:22em
 .testi{background:#fff;border:1px solid var(--line);border-radius:28px;padding:clamp(30px,4vw,52px);text-align:center;box-shadow:var(--shadow);max-width:760px;margin:0 auto}
 .testi svg{width:44px;height:44px;stroke:var(--magenta);margin-bottom:14px}
 .testi p{font-family:'Fraunces',serif;font-style:italic;font-size:1.25rem;color:#3d3349}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.testi-carousel{position:relative;overflow:hidden}
+.testi-track{display:flex;gap:18px;transition:transform .65s ease}
+.testi-card{flex:0 0 100%}
+@media(min-width:700px){.testi-card{flex-basis:calc(50% - 9px)}}
+@media(min-width:1024px){.testi-card{flex-basis:calc(33.3333% - 12px)}}
+.testi-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--magenta);box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:2;padding:0}
+.testi-btn svg{width:20px;height:20px}
+.testi-btn.prev{left:6px}
+.testi-btn.next{right:6px}
+@media(min-width:700px){.testi-btn{display:flex}}
+.testi-dots{display:flex;gap:8px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.testi-dots button{width:9px;height:9px;border-radius:99px;border:none;background:#D8CDE0;padding:0;cursor:pointer;transition:all .3s ease}
+.testi-dots button.active{background:var(--magenta);width:26px}
 .testi-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:26px 24px;box-shadow:var(--shadow)}
 .testi-card svg{width:30px;height:30px;stroke:var(--magenta);margin-bottom:10px}
 .testi-card p{font-family:'Fraunces',serif;font-style:italic;font-size:1.02rem;line-height:1.55;color:#3d3349;margin:0 0 14px}
@@ -491,108 +503,113 @@ footer{background:var(--plum);color:#CFC6DE;padding:64px 0 34px;margin-top:40px}
       <span class="kicker">Testimonios</span>
       <h2 class="sec-title" style="margin:0 auto">Lo que dicen nuestros estudiantes</h2>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
+    <div class="testi-carousel" id="testiCarousel">
+      <div class="testi-track">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“¡Saludos! Estaba esperando a tener los resultados: ¡APROBADO! Gracias por todo el apoyo y la ayuda que nos brindaste en este proceso.”</p>
         <span class="tname">Paola Beatriz</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Gracias por todo, por siempre apoyarme y estar pendiente.”</p>
         <span class="tname">Stephanie Nazario</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Tu equipo y tú fueron parte fundamental e importante para este logro. Muy agradecida contigo.”</p>
         <span class="tname">Natalie Ramos</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Gracias por todo el esfuerzo en los repasos y por darme la mano cuando la necesité. Gracias se queda corto, pero gracias por todo lo que hicieron en los repasos, los quiz, por todo, gracias mil. Y por las palabras de aliento en esos últimos momentos, un abrazo. Más que agradecida con el servicio, de todo corazón.”</p>
         <span class="tname">Linezka</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“El repaso hizo la diferencia porque me ayudó a empezar a estudiar para la reválida mucho antes de la fecha del examen. Así que muchas, muchas gracias.”</p>
         <span class="tname">Aryam Rivera</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Mil gracias por los repasos y las clases, era lo que necesitaba.”</p>
         <span class="tname">Stephanie Canales</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Aunque no pude tomar el examen, agradezco muchísimo la ayuda que brindaron durante esta travesía.”</p>
         <span class="tname">Claudia Conde</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“¡Gracias a ustedes! Ha sido un reto entre estudiar y cuidar de mi pariente. Agradezco que siempre estuvieron en la mayor disponibilidad de ayuda. Su apoyo, a pesar de no conectarme a los grupos por las tardes, se dejó sentir. Ustedes fueron una parte medular en este proceso.”</p>
         <span class="tname">Alexandra</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Gracias. Tu método de consistencia, compromiso, trabajo en equipo y comunicación definitivamente fue la clave para obtener esta puntuación. Cuentas conmigo para lo que necesites, y espero que puedas seguir apoyando a futuros colegas a obtener su gran ‘Aprobado’.”</p>
         <span class="tname">Natalia Colón</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Gracias por creer en mí y darme la oportunidad de estar en tu grupo. Un abrazo grande y mucha salud. Estás tocando vidas… eres parte de este proceso y de mi ‘pass’. Fuiste parte y no nos soltaste.”</p>
         <span class="tname">Cristina</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Y por fin llegó el tan esperado aprobado. No quiero dejar pasar la oportunidad de agradecerte infinitamente tu apoyo incondicional. No tienes idea de la huella que dejas con tu compromiso en cada una de nosotras, tus estudiantes. Nunca dudes del excelente equipo que tienes y del material que impartes. Estoy demasiado emocionada. ¡Gracias infinitas, Naíxa, y a todos los profesores! Me esforcé y lo logré. ¡No puedo creerlo!”</p>
         <span class="tname">Younmarie Feliciano</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Conocí a través de ustedes una comunidad de estudios extraordinaria. Gracias por la oportunidad. Siempre les estaré agradecida. Le bendigo.”</p>
         <span class="tname">Mónica Pérez</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Gracias por su apoyo. Un abrazo.”</p>
         <span class="tname">Alexandra Rodriguez</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Te agradezco mucho por acompañarme en este proceso.”</p>
         <span class="tname">Elise González</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“¡Esta vez sí lo logré! Y estoy demasiado agradecida con Dios por este gran logro alcanzado. De verdad lo valoro y aprecio muchísimo. Deseaba compartirte esta gran noticia porque, comoquiera, fuiste clave para este gran logro: tú y los demás profesores. Aprendí mucho cuando tomé el repaso. Gracias siempre por ser tan atenta, por tu disponibilidad y apoyo.”</p>
         <span class="tname">Kritzianel</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“¡LA PASÉ! Mil, mil gracias. Junto con Inspirat fueron parte esencial para alcanzar este logro. Sumamente agradecido. El agradecimiento es tanto que no encuentro palabras para agradecerte. El placer ha sido mío.”</p>
         <span class="tname">Christian Acevedo</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Te agradezco siempre tu guía y que estuvieras por mí a cada paso.”</p>
         <span class="tname">Jeydalee</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“No tengo palabras para expresar mi agradecimiento contigo y el equipo.”</p>
         <span class="tname">Naiomy</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“¡Licenciada Carlo Ayala! Estoy feliz. Muchísimas gracias por los recursos.”</p>
         <span class="tname">Katiria Carlo</span>
       </div>
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 14v36"/><path d="M32 14c-1-4-4-7-8-8M32 14c1-4 4-7 8-8"/><path d="M31 22C22 10 8 10 8 22c0 9 12 13 23 8"/><path d="M33 22c9-12 23-12 23 0 0 9-12 13-23 8"/><path d="M31 34c-7-1-15 3-14 11 1 7 10 6 14-1"/><path d="M33 34c7-1 15 3 14 11-1 7-10 6-14-1"/></svg>
         <p>“Estudié con el manual que tenía de Inspirat del primer intento y mis antiguas anotaciones, y esta vez lo logré.”</p>
         <span class="tname">Kristle Cruz</span>
       </div>
+      </div>
+      <button class="testi-btn prev" id="testiPrev" type="button" aria-label="Testimonios anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="testi-btn next" id="testiNext" type="button" aria-label="Testimonios siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
+    <div class="testi-dots" id="testiDots"></div>
   </div>
 </section>
 <!-- ============ FAQ ============ -->
@@ -804,6 +821,66 @@ s0.parentNode.insertBefore(s1,s0);
   envolver('onLoad'); envolver('onChatMaximized'); envolver('onChatMinimized'); envolver('onChatHidden');
   if(document.body){ new MutationObserver(ajustar).observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:['style']}); }
   ajustar();
+})();
+</script>
+
+<script>
+(function(){
+  var car = document.getElementById('testiCarousel');
+  if(!car) return;
+  var track = car.querySelector('.testi-track');
+  var cards = Array.prototype.slice.call(track.children);
+  var dotsWrap = document.getElementById('testiDots');
+  var prev = document.getElementById('testiPrev');
+  var next = document.getElementById('testiNext');
+  var page = 0, pages = 1, timer = null, paused = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function visible(){ return window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 700 ? 2 : 1); }
+  function build(){
+    var v = visible(), maxI = cards.length - v, offs = [], i;
+    for(i = 0; i <= maxI; i += v) offs.push(i);
+    if(offs[offs.length - 1] !== maxI) offs.push(maxI);
+    car._offs = offs; pages = offs.length;
+    if(page >= pages) page = pages - 1;
+    dotsWrap.innerHTML = '';
+    offs.forEach(function(_, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Ver testimonios, página ' + (i + 1));
+      b.addEventListener('click', function(){ go(i); restart(); });
+      dotsWrap.appendChild(b);
+    });
+    go(page);
+  }
+  function go(p){
+    page = ((p % pages) + pages) % pages;
+    var w = cards[0].offsetWidth + 18;
+    track.style.transform = 'translateX(' + (-car._offs[page] * w) + 'px)';
+    Array.prototype.forEach.call(dotsWrap.children, function(d, i){
+      d.classList.toggle('active', i === page);
+    });
+  }
+  function start(){ stop(); if(reduce) return; timer = setInterval(function(){ if(!paused) go(page + 1); }, 6000); }
+  function stop(){ if(timer) clearInterval(timer); }
+  function restart(){ start(); }
+  prev.addEventListener('click', function(){ go(page - 1); restart(); });
+  next.addEventListener('click', function(){ go(page + 1); restart(); });
+  car.addEventListener('pointerenter', function(){ paused = true; });
+  car.addEventListener('pointerleave', function(){ paused = false; });
+  car.addEventListener('pointerdown', function(){ paused = true; });
+  window.addEventListener('pointerup', function(){ paused = false; });
+  var sx = null;
+  car.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; paused = true; }, {passive:true});
+  car.addEventListener('touchend', function(e){
+    if(sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 40){ go(page + (dx < 0 ? 1 : -1)); restart(); }
+    sx = null; paused = false;
+  }, {passive:true});
+  document.addEventListener('visibilitychange', function(){ if(document.hidden) stop(); else start(); });
+  var rto;
+  window.addEventListener('resize', function(){ clearTimeout(rto); rto = setTimeout(build, 150); });
+  build(); start();
 })();
 </script>
 </body>
