@@ -1,13 +1,12 @@
 /* Inspirat Psychology — service worker de la PWA.
    Estrategia: sirve la copia guardada al instante y actualiza en segundo plano,
    así la app abre rápido y sigue funcionando sin internet. */
-const CACHE = 'inspirat-pwa-v1';
+const CACHE = 'inspirat-pwa-v2';
 const CORE = [
   './',
   'index.html',
   'portal.html',
   'revalida.html',
-  'comprensivos.html',
   'manual.html',
   'tutorias.html',
   'manifest.json',
